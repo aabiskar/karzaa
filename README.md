@@ -1,6 +1,6 @@
 # karzaa
 
-A simple application to add application forms and update their status accordingly.
+A simple karzaa management application.
 
 ## Installation Instructions
 
@@ -49,7 +49,7 @@ knex seed:run
 
 ### Run
 
-In browser, open http://localhost:3000/. You can change the port in `src/config.json` file.
+In browser, open [http://localhost:3000/](http://localhost:3000/). You can change the port in `src/config.json` file.
 
 
 Enjoy!
