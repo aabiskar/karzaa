@@ -1,0 +1,92 @@
+extends ../includes/layout
+
+block content
+  .row
+    .col-md-10.col-md-offset-1
+      h1 Add new application
+
+      include ../partials/error-input
+
+      form(method="POST")
+        label Applicant info
+        .row
+          .col-md-4.form-group
+            input.form-control(placeholder="First name" type="text" name="person[first_name]" required="required" )
+          .col-md-4.form-group
+            input.form-control(placeholder="Middle name" type="text" name="person[middle_name]")
+          .col-md-4.form-group
+            input.form-control(placeholder="Last name" type="text" name="person[last_name]" required="required")
+        .row
+          .col-md-6.form-group
+            input.form-control(placeholder="Age" type="number" name="person[age]" min="18" max="60" required="required")
+          .col-md-6.form-group
+            select.form-control(name="person[gender]" required="required")
+              option(value="Male") Male
+              option(value="Female") Female
+              option(value="Other") Other
+        .row
+          .col-md-6.form-group
+            input.form-control(placeholder="Email address" type="email" name="person[email]" required="required")
+          .col-md-6.form-group
+            input.form-control(placeholder="Phone Number" type="tel" name="person[phone]" required="required")
+        .row
+          .col-md-6.form-group
+            select.form-control(name="person[address][zone]" required="required")
+              option(value="Bagmati") Bagmati
+          .col-md-6.form-group
+            select.form-control(name="person[address][district]" required="required")
+              option(value="Kathmandu") Kathmandu
+              option(value="Lalitpur") Lalitpur
+              option(value="Bhaktapur") Bhaktapur
+        .row
+          .col-md-6.form-group
+            input.form-control(placeholder="City" type="text" name="person[address][city]" required="required")
+          .col-md-2.form-group
+            input.form-control(placeholder="Ward Number" type="number" name="person[address][ward_no]" min="1")
+          .col-md-4.form-group
+            input.form-control(placeholder="Tole" type="text" name="person[address][tole]")
+
+        label Company details
+        .form-group
+          input.form-control(placeholder="Company Name" type="text" name="company[name]" required="required")
+        .row
+          .col-md-6.form-group
+            input.form-control(placeholder="Email address" type="email" name="company[email]" required="required")
+          .col-md-6.form-group
+            input.form-control(placeholder="Phone Number" type="tel" name="company[phone]" required="required")
+        .row
+          .col-md-6.form-group
+            select.form-control(name="company[address][zone]" required="required")
+              option(value="Bagmati") Bagmati
+          .col-md-6.form-group
+            select.form-control(name="company[address][district]" required="required")
+              option(value="Kathmandu") Kathmandu
+              option(value="Lalitpur") Lalitpur
+              option(value="Bhaktapur") Bhaktapur
+        .row
+          .col-md-6.form-group
+            input.form-control(placeholder="City" type="text" name="company[address][city]" required="required")
+          .col-md-2.form-group
+            input.form-control(placeholder="Ward Number" type="number" name="company[address][ward_no]" min="1")
+          .col-md-4.form-group
+            input.form-control(placeholder="Tole" type="text" name="company[address][tole]")
+        .row
+          .col-md-6.form-group
+            label.control-label Citizenship
+            input.form-control(placeholder="Citizenship" type="file" name="document[citizenship]" required="required")
+          .col-md-6.form-group
+            label.control-label Passport
+            input.form-control(placeholder="Passport" type="file" name="document[passport]" required="required")
+        .row
+          .col-md-4.form-group
+            label.control-label Three months bank statement
+            input.form-control(placeholder="Statement" type="file" name="document[statement]" required="required")
+          .col-md-4.form-group
+            label.control-label Job Letter
+            input.form-control(placeholder="Job Letter" type="file" name="document[job_letter]" required="required")
+          .col-md-4.form-group
+            label.control-label Payslip
+            input.form-control(placeholder="Payslip" type="file" name="document[payslip]" required="required")
+        .row
+          .col-md-4.col-md-offset-4.form-group
+            button.btn.btn-lg.btn-block.btn-primary(type="submit") Add

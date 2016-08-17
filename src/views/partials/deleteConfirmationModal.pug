@@ -1,0 +1,13 @@
+div.modal.fade(id="deleteConfirmationModal_" + employee.id tabindex='-1', role='dialog', aria-labelledby='deleteConfirmationModal')
+  .modal-dialog(role='document')
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-label='Close')
+          span(aria-hidden='true') ×
+        h4#myModalLabel.modal-title Confirm?
+      .modal-body
+        p Are you sure to delete this employee?
+        p.alert.alert-warning Caution: This employee will not be accessible after this operation.
+      .modal-footer
+        button.btn.btn-default(type='button', data-dismiss='modal') No
+        a.btn.btn-danger(href="/employees/" + employee.id + "/delete") Yes

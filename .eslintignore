@@ -1,0 +1,12 @@
+# /node_modules/* and /bower_components/* ignored by default
+
+# Ignore built files except build/index.js
+dist/*
+
+# Ignore library files
+#JS
+src/public/javascripts/jquery.min.js
+src/public/javascripts/bootstrap.min.js
+#CSS
+src/public/stylesheets/bootstrap.css
+src/public/stylesheets/bootstrap.map

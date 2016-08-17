@@ -1,0 +1,46 @@
+extends ../includes/layout
+
+block content
+  h1 List of applications
+  #container
+    if !applications.length
+      p.alert.alert-info No applications available
+    else
+      table.table.table-bordered
+        thead
+          tr
+            th S. No.
+            th Name
+            th Company
+            th Operations
+        tbody
+          - var index = 1
+          for application in applications
+            tr
+              td(style="width: 10%") #{index++}
+              td(style="width: 60%")
+                a(href="/applications/" + application.id) #{application.name}
+              td(style="width: 15%") #{application.company_name}
+              td(style="width: 15%")
+                a.btn.btn-primary(href="/applications/" + application.id + "/edit") Edit
+                span &nbsp;&nbsp;
+                button.btn.btn-danger(type="button" data-toggle="modal" data-target="#deleteConfirmationModal_" + application.id) Delete
+                include ../partials/deleteConfirmationModal
+
+      nav(aria-label="Page navigation")
+        ul.pagination
+          li
+            if (pagination.page > 1)
+              a(href="/applications?page=" + (pagination.page - 1) aria-label="Previous")
+                span(aria-hidden="true") &laquo;
+
+          - for (var i=1; i <= pagination.pageCount; i++)
+          li
+            if(pagination.page === i)
+              a.active(href="/applications?page=" + i ) #{i}
+            else
+              a(href="/applications?page=" + i ) #{i}
+          li
+            if (pagination.page < pagination.pageCount)
+              a(href="/applications?page=" + (pagination.page + 1) aria-label="Next")
+                span(aria-hidden="true") &raquo;
